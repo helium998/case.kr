@@ -1,0 +1,2 @@
+# case.kr
+korean
