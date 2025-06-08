@@ -1,2 +1,3 @@
 # case.kr
 korean
+kokoko
