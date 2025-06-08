@@ -1,10 +1,9 @@
-
 <!DOCTYPE html>
 <html lang="zh">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>쿠팡 휴대폰케이스 할인 구매</title>
+  <title>쿠팡 휴대폰케이스 할인구매</title>
   <style>
     body {
       font-family: sans-serif;
@@ -22,13 +21,63 @@
     .header h2 {
       margin-bottom: 10px;
     }
-    .product {
-      margin-bottom: 30px;
+
+  
+    /* 商品列表容器 */
+   .product-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+.product {
+  background: #fff;
+  padding: 15px;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  width: calc(50% - 20px); /* 两列布局 */
+  box-sizing: border-box;
+}
+
+.product img {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+@media (max-width: 430px) {
+  .product {
+    width: calc(50% - 20px); /* 小屏幕下仍为两列 */
+  }
+}
+
+@media (max-width: 360px) {
+  .product {
+    width: 100%; /* 极小屏幕下改为单列 */
+  }
+}
+
+
+    
+    .product-name {
+      margin-top: 10px;
+      font-size: 18px;
+      font-weight: bold;
     }
-    .product img {
-      max-width: 300px;
-      border-radius: 10px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    .price {
+      margin-top: 5px;
+      font-size: 14px;
+    }
+    .price-final {
+      color: #e60023;
+      font-weight: bold;
+    }
+    .price-original {
+      margin-left: 5px;
+      color: #888;
+      text-decoration: line-through;
     }
     .product a {
       display: inline-block;
@@ -38,24 +87,60 @@
       padding: 10px 20px;
       border-radius: 6px;
       text-decoration: none;
-    }
-    .product-name {
-      margin-top: 10px;
-      font-size: 18px;
       font-weight: bold;
+    }
+    .product a:hover {
+      background: #ff3c3c;
     }
   </style>
 </head>
 <body>
 
   <div class="header">
-    <h2>쿠팡 휴대폰케이스 할인 구매</h2>
+    <h2>쿠팡 휴대폰케이스 할인 행사</h2>
+    <p style="color: red; font-weight: bold; font-size: 16px; margin: 8px 0;">
+  🎯 행사 종료 까지：</p>
+    <p style="color: red; font-weight: bold; font-size: 20px; margin: 8px 0;">
+    <span id="countdown">加载中...</span>
+</p>
     <p>구매후 5점 리뷰+사진, ₩2000드립니다💰| 스타일 계속 업데이트 중</p>
-    <p>카톡친구추가：<strong>YeziHelium</strong></p>
+    <p style="font-size: 14px; color: #666;">📌 우선 정상가로 쿠팡에서 주문하고 상품을 받은 후, 별점 5개와 사진 2장 이상 첨부해서 후기 작성해 주세요! 후기 캡처해서 카카오톡으로 보내주시면 바로 캐시백 드려요 :)~</p>
+    <p>카카오톡 ID：<strong>YeziHelium</strong></p>
+  <img src="kakaoid.png" alt="图片" style="width: 150px; border-radius: 8px;">
   </div>
 
 
+   <script>
+    function updateCountdown() {
+      const endTime = new Date('2025-06-11T20:00:00+09:00').getTime();
+      const now = new Date().getTime();
+      const distance = endTime - now;
 
+      if (distance <= 0) {
+        document.getElementById('countdown').innerText = '진행중 입니다';
+        return;
+      }
+
+      const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((distance / (1000 * 60 * 60)) % 24);
+      const minutes = Math.floor((distance / (1000 * 60)) % 60);
+      const seconds = Math.floor((distance / 1000) % 60);
+
+      document.getElementById('countdown').innerText =
+        `${days}일 ${hours}시간 ${minutes}분 ${seconds}초`;
+    }
+
+    updateCountdown();
+    setInterval(updateCountdown, 1000);
+  </script>
+</body>
+</html>
+
+  
+
+
+
+<div class="product-list">
 <div class="product">
   <img src="8715746181.png" alt="商品图片">
   <div class="product-name">BuyChoo 马里奥泡芙壳手机壳白色-红色</div>
@@ -345,6 +430,10 @@
   <a href="https://www.coupang.com/vp/products/8715701373" target="_blank">👉 구매하기</a>
 </div>
 
+
+<p style="margin-top: 40px; color: #555; font-size: 16px; font-weight: bold;">
+🚧 아직 등록되지 않은 상품이 있어요! 열심히 업데이트 중입니다 😊 기대해 주세요!
+</p>
   
 </body>
 </html>
