@@ -1,0 +1,682 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>케이스 리뷰 이벤트</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Noto Sans KR', sans-serif;
+      background-color: #fff;
+      color: #333;
+      text-align: center;
+    }
+
+    .section {
+      padding: 20px;
+    }
+
+    .title {
+      font-size: 24px;
+      font-weight: bold;
+      margin-bottom: 10px;
+    }
+
+    .subtext {
+      font-size: 16px;
+      color: #666;
+    }
+
+    .slider {
+      display: flex;
+      overflow-x: auto;
+      gap: 16px;
+      scroll-snap-type: x mandatory;
+      padding: 20px;
+    }
+
+    .slider img {
+      width: 80%;
+      max-width: 400px;
+      flex-shrink: 0;
+      border-radius: 8px;
+      scroll-snap-align: center;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
+
+    .button {
+      display: inline-block;
+      background-color: #0072ff;
+      color: white;
+      padding: 14px 24px;
+      font-size: 18px;
+      font-weight: bold;
+      border-radius: 8px;
+      text-decoration: none;
+      margin-top: 30px;
+    }
+
+    .button2 {
+      display: inline-block;
+      background-color: #fffb00;
+      color: rgb(0, 0, 0);
+      padding: 14px 24px;
+      font-size: 18px;
+      font-weight: bold;
+      border-radius: 8px;
+      text-decoration: none;
+      margin-top: 30px;
+    }
+
+
+    .button:hover {
+      background-color: #0057d8;
+    }
+
+
+    .slider {
+  display: flex;
+  overflow-x: auto;
+  gap: 16px;
+  padding: 20px;
+  scroll-snap-type: x mandatory;
+}
+
+.img-wrap {
+  position: relative;
+  flex-shrink: 0;
+  max-width: 100%; /* 修改为max-width控制宽度 */
+  scroll-snap-align: center;
+  border-radius: 10px;
+  overflow: visible; /* 👈 允许图标超出容器显示 */
+}
+
+.img-wrap img {
+  height: 320px;
+  width: auto;
+  display: block;
+  border-radius: 10px;
+  object-fit: contain;
+}
+
+/* 图标样式 */
+.badge {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  width: 36px;
+  z-index: 10;
+  border-radius: 50%;
+}
+
+.price-tag {
+  margin-top: 8px;
+  font-size: 18px;
+  font-weight: bold;
+  color: #999;
+  font-family: 'Arial', sans-serif;
+  text-decoration: line-through;
+}
+
+.buy-button {
+  margin-top: 8px;
+  display: inline-block;
+  background-color: #0072ff;
+  color: white;
+  padding: 8px 16px;
+  font-size: 14px;
+  font-weight: bold;
+  border-radius: 6px;
+  text-decoration: none;
+}
+
+.buy-button:hover {
+  background-color: #0057d8;
+}
+
+/* 新增样式 */
+.more-toggle {
+  margin: 30px auto 10px;
+  display: inline-block;
+  font-size: 16px;
+  font-weight: bold;
+  background: #eee;
+  padding: 12px 20px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.more-toggle:hover {
+  background: #ddd;
+}
+
+.product-grid {
+  display: none;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  padding: 20px;
+}
+
+.product {
+  width: calc(50% - 20px);
+  background: #fafafa;
+  border-radius: 10px;
+  padding: 10px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+  box-sizing: border-box;
+}
+
+.product img {
+  width: 100%;
+  border-radius: 6px;
+}
+
+.product-name {
+  font-size: 14px;
+  font-weight: bold;
+  margin-top: 8px;
+}
+
+.price {
+  font-size: 14px;
+  margin: 4px 0;
+}
+
+.price-final {
+  color: #e60023;
+  font-weight: bold;
+}
+
+.price-original {
+  color: #888;
+  text-decoration: line-through;
+  margin-left: 6px;
+}
+
+.product a {
+  display: inline-block;
+  margin-top: 6px;
+  background: #0072ff;
+  color: white;
+  padding: 6px 12px;
+  font-size: 13px;
+  border-radius: 6px;
+  text-decoration: none;
+}
+
+  </style>
+</head>
+<body>
+
+
+
+
+
+
+
+  
+  
+
+  <div class="section">
+    <div class="title">🎁 리뷰 이벤트 </div>
+      라부부 케이스 리뷰 이벤트</div>
+    <p class="subtext">
+      구매후 바로 1,000원 캐시백 드립니다.<p>
+            
+      리뷰 작성 시 <strong>50%</strong> 캐시백 추가 지급!<br/>
+      (문자 + 사진 2장 첨부 )
+    </p>
+
+
+
+
+
+
+
+    
+    <a class="button2" href="https://open.kakao.com/o/siA30lCh" target="_blank">👉 카카오톡 오픈채팅</a>
+  </div>
+    <p class="subtext">
+    오픈채팅 문의 캐시백 닫아요~</p>
+  </div>
+
+
+
+
+
+
+
+<div class="slider">
+  <div class="img-wrap">
+    <img src="7530697468.png" alt="제품 이미지 1">
+    <div class="price-tag">₩10,080원</div>
+  <div style="font-size: 15px; font-weight: bold; color: #333;">구매 캐시백 후 가격: ₩9,080원</div>
+    <div style="font-size: 15px; font-weight: bold; color: #ff0000;">리뷰하면 최종 가격: ₩4,040원</div>
+    <a class="buy-button" href="https://www.coupang.com/vp/products/7530697468" target="_blank">👉 쿠팡에서 구매하기</a>
+  </div>
+
+
+  <div class="img-wrap">
+  <img src="8835345396.png" alt="제품 이미지 2" />
+    <div class="price-tag">₩10,080원</div>
+  <div style="font-size: 15px; font-weight: bold; color: #333;">구매 캐시백 후 가격: ₩9,080원</div>
+    <div style="font-size: 15px; font-weight: bold; color: #ff0000;">리뷰하면 최종 가격: ₩4,040원</div>
+    <a class="buy-button" href="https://www.coupang.com/vp/products/8835345396" target="_blank">👉 쿠팡에서 구매하기</a>
+</div>
+
+
+  <div class="img-wrap">
+    <img src="8835349214.png" alt="제품 이미지 3">
+    <div class="price-tag">₩10,080원</div>
+  <div style="font-size: 15px; font-weight: bold; color: #333;">구매 캐시백 후 가격: ₩9,080원</div>
+    <div style="font-size: 15px; font-weight: bold; color: #ff0000;">리뷰하면 최종 가격: ₩4,040원</div>
+    <a class="buy-button" href="https://www.coupang.com/vp/products/8835349214" target="_blank">👉 쿠팡에서 구매하기</a>
+  </div>
+  
+
+
+  <div class="img-wrap">
+    <img src="8835369722.png" alt="제품 이미지 3">
+    <div class="price-tag">₩10,080원</div>
+  <div style="font-size: 15px; font-weight: bold; color: #333;">구매 캐시백 후 가격: ₩9,080원</div>
+    <div style="font-size: 15px; font-weight: bold; color: #ff0000;">리뷰하면 최종 가격: ₩4,040원</div>
+    <a class="buy-button" href="https://www.coupang.com/vp/products/8835369722" target="_blank">👉 쿠팡에서 구매하기</a>
+  </div>
+
+  <div class="img-wrap">
+    <img src="8835370191.png" alt="제품 이미지 3">
+    <div class="price-tag">₩10,080원</div>
+  <div style="font-size: 15px; font-weight: bold; color: #333;">구매 캐시백 후 가격: ₩9,080원</div>
+    <div style="font-size: 15px; font-weight: bold; color: #ff0000;">리뷰하면 최종 가격: ₩4,040원</div>
+    <a class="buy-button" href="https://www.coupang.com/vp/products/8835370191" target="_blank">👉 쿠팡에서 구매하기</a>
+  </div>
+
+  <div class="img-wrap">
+    <img src="8835372636.png" alt="제품 이미지 3">
+    <div class="price-tag">₩10,080원</div>
+  <div style="font-size: 15px; font-weight: bold; color: #333;">구매 캐시백 후 가격: ₩9,080원</div>
+    <div style="font-size: 15px; font-weight: bold; color: #ff0000;">리뷰하면 최종 가격: ₩4,040원</div>
+    <a class="buy-button" href="https://www.coupang.com/vp/products/8835372636" target="_blank">👉 쿠팡에서 구매하기</a>
+  </div>
+
+
+  <div class="img-wrap">
+    <img src="8835971646.png" alt="제품 이미지 3">
+    <div class="price-tag">₩10,080원</div>
+  <div style="font-size: 15px; font-weight: bold; color: #333;">구매 캐시백 후 가격: ₩9,080원</div>
+    <div style="font-size: 15px; font-weight: bold; color: #ff0000;">리뷰하면 최종 가격: ₩4,040원</div>
+    <a class="buy-button" href="https://www.coupang.com/vp/products/8835971646" target="_blank">👉 쿠팡에서 구매하기</a>
+  </div>
+
+
+    <div class="img-wrap">
+    <img src="8835978756.png" alt="제품 이미지 3">
+    <div class="price-tag">₩10,080원</div>
+  <div style="font-size: 15px; font-weight: bold; color: #333;">구매 캐시백 후 가격: ₩9,080원</div>
+    <div style="font-size: 15px; font-weight: bold; color: #ff0000;">리뷰하면 최종 가격: ₩4,040원</div>
+    <a class="buy-button" href="https://www.coupang.com/vp/products/8835978756" target="_blank">👉 쿠팡에서 구매하기</a>
+  </div>
+
+
+    <div class="img-wrap">
+    <img src="8835979214.png" alt="제품 이미지 3">
+    <div class="price-tag">₩10,080원</div>
+  <div style="font-size: 15px; font-weight: bold; color: #333;">구매 캐시백 후 가격: ₩9,080원</div>
+    <div style="font-size: 15px; font-weight: bold; color: #ff0000;">리뷰하면 최종 가격: ₩4,040원</div>
+    <a class="buy-button" href="https://www.coupang.com/vp/products/8835979214" target="_blank">👉 쿠팡에서 구매하기</a>
+  </div>
+
+
+
+    <div class="img-wrap">
+    <img src="8835979634.png" alt="제품 이미지 3">
+    <div class="price-tag">₩10,080원</div>
+  <div style="font-size: 15px; font-weight: bold; color: #333;">구매 캐시백 후 가격: ₩9,080원</div>
+    <div style="font-size: 15px; font-weight: bold; color: #ff0000;">리뷰하면 최종 가격: ₩4,040원</div>
+    <a class="buy-button" href="https://www.coupang.com/vp/products/8835979634" target="_blank">👉 쿠팡에서 구매하기</a>
+  </div>
+
+
+    <div class="img-wrap">
+    <img src="8835980636.png" alt="제품 이미지 3">
+    <div class="price-tag">₩10,080원</div>
+  <div style="font-size: 15px; font-weight: bold; color: #333;">구매 캐시백 후 가격: ₩9,080원</div>
+    <div style="font-size: 15px; font-weight: bold; color: #ff0000;">리뷰하면 최종 가격: ₩4,040원</div>
+    <a class="buy-button" href="https://www.coupang.com/vp/products/8835980636" target="_blank">👉 쿠팡에서 구매하기</a>
+  </div>
+
+
+    <div class="img-wrap">
+    <img src="8835981259.png" alt="제품 이미지 3">
+    <div class="price-tag">₩10,080원</div>
+  <div style="font-size: 15px; font-weight: bold; color: #333;">구매 캐시백 후 가격: ₩9,080원</div>
+    <div style="font-size: 15px; font-weight: bold; color: #ff0000;">리뷰하면 최종 가격: ₩4,040원</div>
+    <a class="buy-button" href="https://www.coupang.com/vp/products/8835981259" target="_blank">👉 쿠팡에서 구매하기</a>
+  </div>
+
+
+    <div class="img-wrap">
+    <img src="8837822061.png" alt="제품 이미지 3">
+    <div class="price-tag">₩10,080원</div>
+  <div style="font-size: 15px; font-weight: bold; color: #333;">구매 캐시백 후 가격: ₩9,080원</div>
+    <div style="font-size: 15px; font-weight: bold; color: #ff0000;">리뷰하면 최종 가격: ₩4,040원</div>
+    <a class="buy-button" href="https://www.coupang.com/vp/products/8837822061" target="_blank">👉 쿠팡에서 구매하기</a>
+  </div>
+
+</div>
+
+
+
+
+
+
+
+
+<div onclick="toggleMore()" class="more-toggle">👇더 많은 케이스 보기~!👇</div>
+<div id="moreProducts" class="product-grid">
+
+
+
+
+
+<div class="product">
+  <img src="8717326137.png" alt="商品图片">
+  <div class="product-name">BuyChoo 马里奥泡芙壳手机壳白色-红色</div>
+  <div class="price">
+    <span class="price-final">리뷰후 가격：₩1,250</span>
+    <span class="price-original">원가：₩4,500</span>
+  </div>
+  <a href="https://www.coupang.com/vp/products/8717326137" target="_blank">👉 구매하기</a>
+</div>
+
+
+
+
+  <div class="product">
+  <img src="8717134226.png" alt="商品图片">
+  <div class="product-name">BuyChoo 牛仔豹纹黄油小熊+挂绳泡芙壳手机壳米黄色</div>
+  <div class="price">
+    <span class="price-final">리뷰후 가격：₩1,250</span>
+    <span class="price-original">원가：₩4,500</span>
+  </div>
+  <a href="https://www.coupang.com/vp/products/8717134226" target="_blank">👉 구매하기</a>
+</div>
+
+
+
+
+  <div class="product">
+  <img src="8719325200.png" alt="商品图片">
+  <div class="product-name">BuyChoo 咖啡小猫泡芙壳手机壳黑色</div>
+  <div class="price">
+    <span class="price-final">리뷰후 가격：₩1,250</span>
+    <span class="price-original">원가：₩4,500</span>
+  </div>
+  <a href="https://www.coupang.com/vp/products/8719325200" target="_blank">👉 구매하기</a>
+</div>
+
+
+
+  <div class="product">
+  <img src="8702574812.png" alt="商品图片">
+  <div class="product-name">BuyChoo泡芙壳泡芙壳-白色-棒棒糖m豆【单壳】</div>
+  <div class="price">
+    <span class="price-final">리뷰후 가격：₩1,250</span>
+    <span class="price-original">원가：₩4,500</span>
+  </div>
+  <a href="https://www.coupang.com/vp/products/8702574812" target="_blank">👉 구매하기</a>
+</div>
+
+
+
+
+    <div class="product">
+  <img src="8715704487.png" alt="商品图片">
+  <div class="product-name">BuyChoo土豆图案泡芙款手机壳深棕色</div>
+  <div class="price">
+    <span class="price-final">리뷰후 가격：₩1,250</span>
+    <span class="price-original">원가：₩4,500</span>
+  </div>
+  <a href="https://www.coupang.com/vp/products/8715704487" target="_blank">👉 구매하기</a>
+</div>
+
+
+
+  
+    <div class="product">
+  <img src="8715749617.png" alt="商品图片">
+  <div class="product-name">BuyChoo 线条狗图案泡芙壳手机壳白色</div>
+  <div class="price">
+    <span class="price-final">리뷰후 가격：₩1,250</span>
+    <span class="price-original">원가：₩4,500</span>
+  </div>
+  <a href="https://www.coupang.com/vp/products/8715749617" target="_blank">👉 구매하기</a>
+</div>
+
+
+
+  
+    <div class="product">
+  <img src="8715709853.png" alt="商品图片">
+  <div class="product-name">BuyChoo土豆图案泡芙款手机壳草绿色</div>
+  <div class="price">
+    <span class="price-final">리뷰후 가격：₩1,250</span>
+    <span class="price-original">원가：₩4,500</span>
+  </div>
+  <a href="https://www.coupang.com/vp/products/8715709853" target="_blank">👉 구매하기</a>
+</div>
+
+
+
+
+      <div class="product">
+  <img src="8715741766.png" alt="商品图片">
+  <div class="product-name">BuyChoo 绘猫咪单壳泡芙壳手机壳白色</div>
+  <div class="price">
+    <span class="price-final">리뷰후 가격：₩1,250</span>
+    <span class="price-original">원가：₩4,500</span>
+  </div>
+  <a href="https://www.coupang.com/vp/products/8715741766" target="_blank">👉 구매하기</a>
+</div>
+
+
+
+        <div class="product">
+  <img src="8717358294.png" alt="商品图片">
+  <div class="product-name">BuyChoo土豆图案泡芙款手机壳白色</div>
+  <div class="price">
+    <span class="price-final">리뷰후 가격：₩1,250</span>
+    <span class="price-original">원가：₩4,500</span>
+  </div>
+  <a href="https://www.coupang.com/vp/products/8717358294" target="_blank">👉 구매하기</a>
+</div>
+
+
+
+        <div class="product">
+  <img src="8715716956.png" alt="商品图片">
+  <div class="product-name">BuyChoo土豆图案泡芙款手机壳黑色</div>
+  <div class="price">
+    <span class="price-final">리뷰후 가격：₩1,250</span>
+    <span class="price-original">원가：₩4,500</span>
+  </div>
+  <a href="https://www.coupang.com/vp/products/8715716956" target="_blank">👉 구매하기</a>
+</div>
+
+
+
+        <div class="product">
+  <img src="8715694696.png" alt="商品图片">
+  <div class="product-name">BuyChoo土豆图案泡芙款手机壳粉色</div>
+  <div class="price">
+    <span class="price-final">리뷰후 가격：₩1,250</span>
+    <span class="price-original">원가：₩4,500</span>
+  </div>
+  <a href="https://www.coupang.com/vp/products/8715694696" target="_blank">👉 구매하기</a>
+</div>
+
+  
+  
+        <div class="product">
+  <img src="8715753671.png" alt="商品图片">
+  <div class="product-name">BuyChoo 小黑猫图案泡芙壳手机壳白色</div>
+  <div class="price">
+    <span class="price-final">리뷰후 가격：₩1,250ㅍ</span>
+    <span class="price-original">원가：₩4,500</span>
+  </div>
+  <a href="https://www.coupang.com/vp/products/8715753671" target="_blank">👉 구매하기</a>
+</div>
+
+
+
+
+    <div class="product">
+  <img src="8702559192.png" alt="商品图片">
+  <div class="product-name">BuyChoo 泡芙壳手机壳 棒棒糖m豆【带公仔+手提绳】款iPhone白色</div>
+  <div class="price">
+    <span class="price-final">리뷰후 가격：₩4,100</span>
+    <span class="price-original">원가：₩10,200</span>
+  </div>
+  <a href="https://www.coupang.com/vp/products/8702559192" target="_blank">👉 구매하기</a>
+</div>
+
+
+  
+  
+
+  <div class="product">
+  <img src="8316650782.png" alt="商品图片">
+  <div class="product-name">BuyChoo 小黑猫+手绳泡芙壳手机壳白色</div>
+  <div class="price">
+    <span class="price-final">리뷰후 가격：₩3,700</span>
+    <span class="price-original">원가：₩9,400</span>
+  </div>
+  <a href="https://www.coupang.com/vp/products/8316650782" target="_blank">👉 구매하기</a>
+</div>
+
+
+  
+
+  
+<div class="product">
+  <img src="8715746181.png" alt="商品图片">
+  <div class="product-name">BuyChoo 小黑猫+手绳泡芙壳手机壳</div>
+  <div class="price">
+    <span class="price-final">리뷰후 가격：₩2,600</span>
+    <span class="price-original">원가：₩7,200</span>
+  </div>
+  <a href="https://www.coupang.com/vp/products/8715746181" target="_blank">👉 구매하기</a>
+</div>
+
+
+
+<div class="product">
+  <img src="8717231370.png" alt="商品图片">
+  <div class="product-name">BuyChoo 线条狗+手绳泡芙壳手机壳iPhone 14 Plus白色</div>
+  <div class="price">
+    <span class="price-final">리뷰후 가격：₩2,600</span>
+    <span class="price-original">원가：₩7,200</span>
+  </div>
+  <a href="https://www.coupang.com/vp/products/8717231370" target="_blank">👉 구매하기</a>
+</div>
+
+
+
+  <div class="product">
+  <img src="8702579743.png" alt="商品图片">
+  <div class="product-name">BuyChoo泡芙壳iPhone 14 Pro泡芙壳-白色-棒棒糖m豆【带公仔】</div>
+  <div class="price">
+    <span class="price-final">리뷰후 가격：₩2,600</span>
+    <span class="price-original">원가：₩7,200</span>
+  </div>
+  <a href="https://www.coupang.com/vp/products/8702579743" target="_blank">👉 구매하기</a>
+</div>
+
+
+
+
+    <div class="product">
+  <img src="8715683734.png" alt="商品图片">
+  <div class="product-name">BuyChoo棒棒糖m豆【单壳+手提绳】泡芙壳白色</div>
+  <div class="price">
+    <span class="price-final">리뷰후 가격：₩2,600</span>
+    <span class="price-original">원가：₩7,200</span>
+  </div>
+  <a href="https://www.coupang.com/vp/products/8715683734" target="_blank">👉 구매하기</a>
+</div>
+
+
+
+      <div class="product">
+  <img src="8715733605.png" alt="商品图片">
+  <div class="product-name">BuyChoo 手绘猫咪+挂绳泡芙壳手机壳白色</div>
+  <div class="price">
+    <span class="price-final">리뷰후 가격：₩2,600</span>
+    <span class="price-original">원가：₩7,200</span>
+  </div>
+  <a href="https://www.coupang.com/vp/products/8715733605" target="_blank">👉 구매하기</a>
+</div>
+
+
+
+
+
+        <div class="product">
+  <img src="8719296990.png" alt="商品图片">
+  <div class="product-name">BuyChoo 咖啡小猫+手绳泡芙壳手机壳灰色</div>
+  <div class="price">
+    <span class="price-final">리뷰후 가격：₩2,600</span>
+    <span class="price-original">원가：₩7,200</span>
+  </div>
+  <a href="https://www.coupang.com/vp/products/8719296990" target="_blank">👉 구매하기</a>
+</div>
+
+
+        <div class="product">
+  <img src="8700306119.png" alt="商品图片">
+  <div class="product-name">热卖！泡芙款手机壳iPhone 8PLUS粉色-珊瑚水母+海绵宝宝公仔</div>
+  <div class="price">
+    <span class="price-final">리뷰후 가격：₩2,600</span>
+    <span class="price-original">원가：₩7,200</span>
+  </div>
+  <a href="https://www.coupang.com/vp/products/8700306119" target="_blank">👉 구매하기</a>
+</div>
+
+
+
+        <div class="product">
+  <img src="8702560151.png" alt="商品图片">
+  <div class="product-name">泡芙壳茶色</div>
+  <div class="price">
+    <span class="price-final">리뷰후 가격：₩1,600</span>
+    <span class="price-original">원가：₩5,200</span>
+  </div>
+  <a href="https://www.coupang.com/vp/products/8702560151" target="_blank">👉 구매하기</a>
+</div>
+
+
+  
+
+
+          <div class="product">
+  <img src="8715701373.png" alt="商品图片">
+  <div class="product-name">BuyChoo土豆图案泡芙款手机壳奶茶色</div>
+  <div class="price">
+    <span class="price-final">리뷰후 가격：₩1,250</span>
+    <span class="price-original">원가：₩4,500</span>
+  </div>
+  <a href="https://www.coupang.com/vp/products/8715701373" target="_blank">👉 구매하기</a>
+</div>
+
+<script>
+  function toggleMore() {
+    const section = document.getElementById('moreProducts');
+    section.style.display = section.style.display === 'flex' ? 'none' : 'flex';
+  }
+</script>
+
+</body>
+</html>
